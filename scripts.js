@@ -596,6 +596,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Close the menu first
             closeMenu();
             
+
             // Smooth scroll to section with offset for fixed header
             if (targetId.startsWith('#')) {
                 const targetSection = document.querySelector(targetId);
@@ -612,7 +613,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         });
                     }, 300);
                 }
-            }
+            } else {
+				location.href=targetId;
+			}
         });
     });
     
