@@ -464,10 +464,10 @@ app.get('/download/:platform', async (req, res) => {
     const downloadToken = req.query.token;
 
     const downloadUrls = {
-        windows: 'https://download.notsus.net/NotSus_Browser_2.0.15.exe',
-        mac: 'https://download.notsus.net/NotSus_Browser-2.0.15-arm64.dmg',
-        macIntel: 'https://download.notsus.net/NotSus_Browser-2.0.15.dmg',
-        linux: 'https://download.notsus.net/notsusbrowser_2.0.15_amd64.deb'
+        windows: 'https://download.notsus.net/NotSus_Browser_2.1.1.exe',
+        mac: 'https://download.notsus.net/NotSus_Browser-2.1.1-arm64.dmg',
+        macIntel: 'https://download.notsus.net/NotSus_Browser-2.1.1.dmg',
+        linux: 'https://download.notsus.net/notsusbrowser_2.1.1_amd64.deb'
     };
 
     if (!downloadUrls[platform]) {
