@@ -39,6 +39,11 @@ body {
   overflow-x: hidden;
 }
 
+a:has(.header-left){
+			text-decoration: none;
+			color:white;
+		}
+
 /* Container */
 .container {
   width: 100%;
@@ -1409,7 +1414,10 @@ footer img.footer-logo {
     margin: 0;
     width: 100%;
     max-width: 100%;
+	text-decoration: none;
   }
+
+
 
   /* Reduce hero padding-top on mobile */
   .hero {

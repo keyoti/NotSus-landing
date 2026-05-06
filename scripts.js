@@ -4,10 +4,10 @@ const config = {
         return `${window.location.origin}/api/feedback`;
     })(),
     downloadUrls: {
-        windows: 'https://download.notsus.net/NotSus_Browser_2.0.15.exe',
-        mac: 'https://download.notsus.net/NotSus_Browser-2.0.15-arm64.dmg',
-        macIntel: 'https://download.notsus.net/NotSus_Browser-2.0.15.dmg',
-        linux: 'https://download.notsus.net/notsusbrowser_2.0.15_amd64.deb'
+        windows: 'https://download.notsus.net/NotSus_Browser_2.1.1.exe',
+        mac: 'https://download.notsus.net/NotSus_Browser-2.1.1-arm64.dmg',
+        macIntel: 'https://download.notsus.net/NotSus_Browser-2.1.1.dmg',
+        linux: 'https://download.notsus.net/notsusbrowser_2.1.1_amd64.deb'
     }
 };
 
@@ -596,6 +596,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Close the menu first
             closeMenu();
             
+
             // Smooth scroll to section with offset for fixed header
             if (targetId.startsWith('#')) {
                 const targetSection = document.querySelector(targetId);
@@ -612,7 +613,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         });
                     }, 300);
                 }
-            }
+            } else {
+				location.href=targetId;
+			}
         });
     });
     
