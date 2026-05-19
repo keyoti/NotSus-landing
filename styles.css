@@ -44,6 +44,11 @@ a:has(.header-left){
 			color:white;
 		}
 
+    a{
+			text-decoration: none;
+			color:#8888ff;
+		}
+
 /* Container */
 .container {
   width: 100%;
