@@ -425,6 +425,7 @@ app.get('/download-now', async (req, res) => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download NotSus Browser | NotSus.net</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP7D4XPL7X"></script>
     <link rel="stylesheet" href="/styles.css">
     <link rel="icon" type="image/png" href="/favicon.png">
 </head>
@@ -444,7 +445,7 @@ app.get('/download-now', async (req, res) => {
         <h1 class="download-now-title">Thank you for verifying your email</h1>
         <p class="download-now-subtitle">Download the NotSus browser for a safer browsing experience for your kids.</p>
         <div class="download-buttons-wrap">
-            ${downloadLinks.map(({ href, label }) => `<a href="${href}" class="download-button"><span>${label}</span></a>`).join('\n            ')}
+            ${downloadLinks.map(({ href, label }) => `<a href="${href}" class="download-button" onclick="gtag('event', 'click', { event_category: 'installer_download', event_label: '${label}' });"><span>${label}</span></a>`).join('\n            ')}
         </div>
         <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">*We're working on tablet and mobile versions, we will let you know when they are available.</p>
         <p class="download-now-back"><a href="/" style="color: var(--secondary-accent);">Back to home</a></p>
