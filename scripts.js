@@ -95,6 +95,13 @@ async function handleDownloadEmailSubmit(feedbackForm, submitButton) {
 
     try {
         console.log('Submitting form data:', formData);
+        
+        //send to Google Analytics
+        gtag('event', 'installer_email_form', {
+            'link_url': 'https://notsus.net/downloads',
+            'link_text': 'Get Download Link',
+            'send_to': 'G-JP7D4XPL7X'
+        });
 
         const responseData = await submitFormData(formData);
         console.log('Form submission successful:', responseData);
@@ -115,6 +122,8 @@ async function handleDownloadEmailSubmit(feedbackForm, submitButton) {
             document.getElementById('download-section').style.display = 'block';
             setupDownloadTracking(formData.email, {});
         }
+
+
     } catch (err) {
         handleSubmitError(err, activeSubmitButton, originalButtonText);
     }
@@ -754,6 +763,13 @@ async function trackDownload(email, platform, action, token) {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body)
+        });
+
+         //send to Google Analytics
+        gtag('event', 'installer_download', {
+            'link_url': `https://notsus.net/download/${platform}`,
+            'link_text': `Download for ${platform}`,
+            'send_to': 'G-JP7D4XPL7X'
         });
 
         console.log(`Download ${action} tracked for ${platform}`);
